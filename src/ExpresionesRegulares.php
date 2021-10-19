@@ -9,9 +9,9 @@
  */
 function fnA($text)
 {
-    preg_match_all('!\d+!', $text, $ids);
-    rsort($ids[0], SORT_NUMERIC);
-    return $ids[0];
+    preg_match_all('|\(user-gpe-(\d+)\)|', $text, $ids);
+    rsort($ids[1], SORT_NUMERIC);
+    return $ids[1];
 }
 
 $text = "Hola @[Franklin](user-gpe-1071) avisa a @[Ludmina](user-gpe-1061)";
